@@ -1,5 +1,9 @@
 ## Sleeve - Solana DApp
 
+```
+Deployed URL: https://sleeve-dapp.vercel.app/
+```
+
 This is a multifunctional DApp which leverages the features provided by Solana.
 
 * **Wallet Connection:** Easily integrate with various Solana wallets like Phantom and Solflare using the Solana Wallet Adapter.
