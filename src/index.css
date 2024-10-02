@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #131517;
+}
+
+.wallet-adapter-button {
+  background-color: rgb(47, 143, 143);
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25rem .5rem;
+  border-radius: .75rem;
+}
+
+.wallet-adapter-button img {
+  width: 30px;
+}
