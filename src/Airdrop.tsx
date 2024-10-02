@@ -44,11 +44,13 @@ export default function Airdrop() {
       } else {
         publicKey = wallet.publicKey
       }
+      if (publicKey) {
+        await connection.requestAirdrop(publicKey, sol * LAMPORTS_PER_SOL)
+        toast({
+          description: `Airdropped ${sol} SOL to ${publicKey.toBase58()} 🚀`
+        })
+      }
 
-      await connection.requestAirdrop(publicKey, sol * LAMPORTS_PER_SOL)
-      toast({
-        description: `Airdropped ${sol} SOL to ${publicKey.toBase58()} 🚀`
-      })
     } catch (error) {
       console.log(error);
     }
