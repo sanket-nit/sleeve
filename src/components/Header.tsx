@@ -2,6 +2,8 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { WalletDisconnectButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Header() {
 
@@ -24,20 +26,23 @@ export default function Header() {
   }, [wallet.connected])
 
   return (
-    <nav className="w-full top-0 rounded-lg min-h-12 mb-4 text-white flex items-center justify-between px-4 py-2 border border-gray-800">
-      <div className="logo">
-        Tower
-      </div>
-
+    <nav className="w-full sticky bg-background top-0 min-h-12 mb-4 text-white flex items-center justify-between px-4 py-1 border-b border-gray-800">
+      <Logo />
       <div className="grid grid-flow-col items-center gap-4">
-
-        <div>
-          <span>Balance:</span> <span>{userBalance} SOL</span>
-        </div>
-
         {
-          wallet.connected ? <WalletDisconnectButton/> : <WalletMultiButton />
+          wallet.connected ?
+            (
+              <div className="flex items-center gap-2">
+                <div>
+                  <span className="font-extrabold">Balance:</span> <span>{userBalance} SOL</span>
+                </div>
+                <WalletDisconnectButton />
+              </div>
+            ) : <WalletMultiButton />
         }
+        <div>
+          <ModeToggle />
+        </div>
       </div>
 
     </nav>

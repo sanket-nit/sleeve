@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+## Sleeve - Solana DApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a multifunctional DApp which leverages the features provided by Solana.
 
-Currently, two official plugins are available:
+* **Wallet Connection:** Easily integrate with various Solana wallets like Phantom and Solflare using the Solana Wallet Adapter.
+* **Airdrop:**  A simple airdrop feature that allows users to receive test SOL on the Devnet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Getting Started
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone https://github.com/sanket-nit/sleeve.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install dependencies:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```bash
+   pnpm install 
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. **Start the development server:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   pnpm dev
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+4. **Access the app:** Open [http://localhost:5173/](http://localhost:5173/) in your browser.
+
+### Configuration
+
+* **Devnet Endpoint:**  Update the `VITE_ENDPOINT` in `.env` to your preferred Solana Devnet API endpoint.
+* **Wallet Adapters:** In `src/App.tsx`, add the wallet adapters you want to use to the `wallets` array in the `WalletProvider`.
+* **Theme:** You can customize the default theme and storage key in `src/components/theme-provider.tsx`.
+
+### Running Tests
+
+This starter kit does not currently include any tests. You can add tests using your preferred framework.
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+### License
+
+This project is licensed under the MIT License.
+
+

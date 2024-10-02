@@ -10,20 +10,61 @@
   padding: 0;
 }
 
-html, body {
-  background-color: #131517;
+@layer base {
+  @layer base {
+    :root {
+      --background: 287 64% 98%;
+      --foreground: 287 63% 3%;
+      --muted: 257 37% 95%;
+      --muted-foreground: 257 0% 30%;
+      --popover: 287 64% 98%;
+      --popover-foreground: 287 63% 3%;
+      --card: 287 64% 98%;
+      --card-foreground: 287 63% 3%;
+      --border: 287 2% 90%;
+      --input: 287 2% 90%;
+      --primary: 190.19 39.45% 45.23%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 257 39% 42%;
+      --secondary-foreground: 0 0% 100%;
+      --accent: 240 49.51% 44.76%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 2 96% 36%;
+      --destructive-foreground: 2 96% 96%;
+      --ring: 203.77 46.55% 59.71%;
+      --radius: 0.5rem;
+    }
+  
+    .dark {
+      --background: 287 52% 0%;
+      --foreground: 287 12% 98%;
+      --muted: 257 37% 5%;
+      --muted-foreground: 257 0% 70%;
+      --popover: 287 52% 0%;
+      --popover-foreground: 287 12% 98%;
+      --card: 287 52% 0%;
+      --card-foreground: 287 12% 98%;
+      --border: 287 2% 13%;
+      --input: 287 2% 13%;
+      --primary: 183.4 36.94% 47.75%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 267.17 52% 41.5%;
+      --secondary-foreground: 0 0% 100%;
+      --accent: 230.94 44.76% 40.38%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 2 96% 53%;
+      --destructive-foreground: 0 0% 100%;
+      --ring: 181.13 42.95% 46.82%;
+    }
+  }
 }
 
-.wallet-adapter-button {
-  background-color: rgb(47, 143, 143);
-  display: flex;
-  gap: .5rem;
-  justify-content: space-between;
-  align-items: center;
-  padding: .25rem .5rem;
-  border-radius: .75rem;
-}
 
-.wallet-adapter-button img {
-  width: 30px;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

@@ -5,25 +5,28 @@ import {
 
 // Default styles that can be overridden by your app
 import '@solana/wallet-adapter-react-ui/styles.css';
-import Airdrop from './Airdrop';
-import ShowBalance from './ShowBalance';
 import Header from './components/Header';
+import Home from './Home';
+import { ThemeProvider } from './components/theme-provider';
+import { Toaster } from './components/ui/toaster';
 export default function App() {
   const endpoint = import.meta.env.VITE_ENDPOINT;
   console.log(endpoint);
 
 
   return (
-    <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
-      <WalletProvider wallets={[]}>
-        <WalletModalProvider>
-          <div className='min-h-screen w-screen overflow-hidden py-2 px-2 md:px-12'>
-          <Header />
-            <Airdrop />
-            <ShowBalance />
-          </div>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <ThemeProvider>
+      <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+        <WalletProvider wallets={[]}>
+          <WalletModalProvider>
+            <Header />
+            <div className='min-h-screen w-screen overflow-hidden py-2 px-2 md:px-12'>
+              <Home />
+              <Toaster />
+            </div>
+          </WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </ThemeProvider>
   )
 }
