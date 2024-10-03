@@ -1,3 +1,3 @@
 export default function Sign() {
-  return <h1>Sending//</h1>
+  return <h1>Signing//</h1>
 }

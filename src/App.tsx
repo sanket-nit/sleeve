@@ -20,7 +20,7 @@ export default function App() {
         <WalletProvider wallets={[]}>
           <WalletModalProvider>
             <Header />
-            <div className='min-h-screen w-screen overflow-hidden py-2 px-2 md:px-12'>
+            <div className='min-h-screen w-screen overflow-hidden py-2 px-2 md:px-12 flex justify-center'>
               <Home />
               <Toaster />
             </div>

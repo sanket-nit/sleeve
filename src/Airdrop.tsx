@@ -60,7 +60,7 @@ export default function Airdrop() {
 
     <Card>
       <CardHeader>
-        <CardTitle className="text-primary text-xl">Let's Airdrop some SOL! 💦</CardTitle>
+        <CardTitle className="text-primary text-xl">Let's Airdrop some SOL!</CardTitle>
         <CardDescription className="text-[.75rem]">You can either airdrop into connected wallet or input address</CardDescription>
       </CardHeader>
       <CardContent>
@@ -78,7 +78,7 @@ export default function Airdrop() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant={'secondary'} onClick={airdropToUser}>Send 🚀</Button>
+        <Button variant={'secondary'} onClick={airdropToUser}>Send</Button>
       </CardFooter>
     </Card>
   )

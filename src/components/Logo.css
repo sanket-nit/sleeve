@@ -11,6 +11,10 @@
   animation: glitch 1s infinite;
 }
 
+.text-black {
+  color: black !important;
+}
+
 .glitch-1 {
   animation-duration: 1.2s;
   clip: rect(0, 900px, 45px, 0);
