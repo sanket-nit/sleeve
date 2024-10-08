@@ -37,6 +37,7 @@ export default function Header() {
                   <span className="font-extrabold">Balance:</span> <span>{userBalance} SOL</span>
                 </div>
                 <WalletDisconnectButton />
+                <div>{wallet.publicKey?.toBase58()  }</div>
               </div>
             ) : <WalletMultiButton />
         }
